@@ -4,8 +4,109 @@ import java.util.Scanner;
 public class MAIN_loop {
     static Scanner input = new Scanner(System.in);
     ////////////////////////////////////////////////
+    static ArrayList<Human> R1_city1_Citizen;
+    static ArrayList<Human> R1_city1_DeadCitizen;
+    static ArrayList<Human> R1_city1_PosA ;
+    static ArrayList<Human> R1_city1_PosB ;
+    static ArrayList<Human> R1_city1_ICU ;
+
+    static ArrayList<Human> R1_city2_Citizen;
+    static ArrayList<Human> R1_city2_DeadCitizen;
+    static ArrayList<Human> R1_city2_PosA ;
+    static ArrayList<Human> R1_city2_PosB ;
+    static ArrayList<Human> R1_city2_ICU ;
+
+    static ArrayList<Human> R1_city3_Citizen;
+    static ArrayList<Human> R1_city3_DeadCitizen;
+    static ArrayList<Human> R1_city3_PosA ;
+    static ArrayList<Human> R1_city3_PosB ;
+    static ArrayList<Human> R1_city3_ICU ;
+
+    static ArrayList<Human> R1_city4_Citizen;
+    static ArrayList<Human> R1_city4_DeadCitizen;
+    static ArrayList<Human> R1_city4_PosA ;
+    static ArrayList<Human> R1_city4_PosB ;
+    static ArrayList<Human> R1_city4_ICU ;
+
+////////////// Region2
 
 
+    static ArrayList<Human> R2_city1_Citizen;
+    static ArrayList<Human> R2_city1_DeadCitizen;
+    static ArrayList<Human> R2_city1_PosA ;
+    static ArrayList<Human> R2_city1_PosB ;
+    static ArrayList<Human> R2_city1_ICU ;
+
+    static ArrayList<Human> R2_city2_Citizen;
+    static ArrayList<Human> R2_city2_DeadCitizen;
+    static ArrayList<Human> R2_city2_PosA ;
+    static ArrayList<Human> R2_city2_PosB ;
+    static ArrayList<Human> R2_city2_ICU ;
+
+    static ArrayList<Human> R2_city3_Citizen;
+    static ArrayList<Human> R2_city3_DeadCitizen;
+    static ArrayList<Human> R2_city3_PosA ;
+    static ArrayList<Human> R2_city3_PosB ;
+    static ArrayList<Human> R2_city3_ICU ;
+
+    static ArrayList<Human> R2_city4_Citizen;
+    static ArrayList<Human> R2_city4_DeadCitizen;
+    static ArrayList<Human> R2_city4_PosA ;
+    static ArrayList<Human> R2_city4_PosB ;
+    static ArrayList<Human> R2_city4_ICU ;
+
+      ////////////////////////////////// Clone
+      static ArrayList<Human> P2_R1_city1_Citizen;
+      static ArrayList<Human> P2_R1_city1_DeadCitizen;
+      static ArrayList<Human> P2_R1_city1_PosA ;
+      static ArrayList<Human> P2_R1_city1_PosB ;
+      static ArrayList<Human> P2_R1_city1_ICU ;
+  
+      static ArrayList<Human> P2_R1_city2_Citizen;
+      static ArrayList<Human> P2_R1_city2_DeadCitizen;
+      static ArrayList<Human> P2_R1_city2_PosA ;
+      static ArrayList<Human> P2_R1_city2_PosB ;
+      static ArrayList<Human> P2_R1_city2_ICU ;
+  
+      static ArrayList<Human> P2_R1_city3_Citizen;
+      static ArrayList<Human> P2_R1_city3_DeadCitizen;
+      static ArrayList<Human> P2_R1_city3_PosA ;
+      static ArrayList<Human> P2_R1_city3_PosB ;
+      static ArrayList<Human> P2_R1_city3_ICU ;
+  
+      static ArrayList<Human> P2_R1_city4_Citizen;
+      static ArrayList<Human> P2_R1_city4_DeadCitizen;
+      static ArrayList<Human> P2_R1_city4_PosA ;
+      static ArrayList<Human> P2_R1_city4_PosB ;
+      static ArrayList<Human> P2_R1_city4_ICU ;
+  
+  ////////////// Region2
+  
+  
+      static ArrayList<Human> P2_R2_city1_Citizen;
+      static ArrayList<Human> P2_R2_city1_DeadCitizen;
+      static ArrayList<Human> P2_R2_city1_PosA ;
+      static ArrayList<Human> P2_R2_city1_PosB ;
+      static ArrayList<Human> P2_R2_city1_ICU ;
+  
+      static ArrayList<Human> P2_R2_city2_Citizen;
+      static ArrayList<Human> P2_R2_city2_DeadCitizen;
+      static ArrayList<Human> P2_R2_city2_PosA ;
+      static ArrayList<Human> P2_R2_city2_PosB ;
+      static ArrayList<Human> P2_R2_city2_ICU ;
+  
+      static ArrayList<Human> P2_R2_city3_Citizen;
+      static ArrayList<Human> P2_R2_city3_DeadCitizen;
+      static ArrayList<Human> P2_R2_city3_PosA ;
+      static ArrayList<Human> P2_R2_city3_PosB ;
+      static ArrayList<Human> P2_R2_city3_ICU ;
+  
+      static ArrayList<Human> P2_R2_city4_Citizen;
+      static ArrayList<Human> P2_R2_city4_DeadCitizen;
+      static ArrayList<Human> P2_R2_city4_PosA ;
+      static ArrayList<Human> P2_R2_city4_PosB ;
+      static ArrayList<Human> P2_R2_city4_ICU ;
+    
 
 
 
@@ -179,7 +280,112 @@ public class MAIN_loop {
     P2_Cities.addAll(P2_West.getCities());
     P2_Cities.addAll(P2_East.getCities());
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// assigning the static varibles     
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+ 
+R1_city1_Citizen = East_City_1.getDeadCitizen();
+R1_city1_DeadCitizen = East_City_1.getDeadCitizen();
+R1_city1_PosA = GovR2_C1.getPostiveA() ;
+R1_city1_PosB = GovR2_C1.getPostiveB() ;
+R1_city1_ICU = icuR2_C1.getBeds() ;
+
+R1_city2_Citizen = East_City_2.getDeadCitizen();
+R1_city2_DeadCitizen = East_City_2.getDeadCitizen();
+R1_city2_PosA = GovR2_C2.getPostiveA() ;
+R1_city2_PosB = GovR2_C2.getPostiveB() ;
+R1_city2_ICU = icuR2_C2.getBeds() ;
+
+R1_city3_Citizen = East_City_3.getDeadCitizen();
+R1_city3_DeadCitizen = East_City_3.getDeadCitizen();
+R1_city3_PosA = GovR2_C3.getPostiveA() ;
+R1_city3_PosB = GovR2_C3.getPostiveB() ;
+R1_city3_ICU = icuR2_C3.getBeds() ;
+
+R1_city4_Citizen = East_City_4.getDeadCitizen();
+R1_city4_DeadCitizen = East_City_4.getDeadCitizen();
+R1_city4_PosA = GovR2_C4.getPostiveA() ;
+R1_city4_PosB = GovR2_C4.getPostiveB() ;
+R1_city4_ICU = icuR2_C4.getBeds() ;
+
+////////////////////////// Regoin2
+
+R2_city1_Citizen = West_City_1.getDeadCitizen();
+R2_city1_DeadCitizen = West_City_1.getDeadCitizen();
+R2_city1_PosA = GovR3_C1.getPostiveA() ;
+R2_city1_PosB = GovR3_C1.getPostiveB() ;
+R2_city1_ICU = icuR3_C1.getBeds() ;
+
+R2_city2_Citizen = West_City_2.getDeadCitizen();
+R2_city2_DeadCitizen = West_City_2.getDeadCitizen();
+R2_city2_PosA = GovR3_C2.getPostiveA() ;
+R2_city2_PosB = GovR3_C2.getPostiveB() ;
+R2_city2_ICU = icuR3_C2.getBeds() ;
+
+R2_city3_Citizen = West_City_3.getDeadCitizen();
+R2_city3_DeadCitizen = West_City_3.getDeadCitizen();
+R2_city3_PosA = GovR3_C3.getPostiveA() ;
+R2_city3_PosB = GovR3_C3.getPostiveB() ;
+R2_city3_ICU = icuR3_C3.getBeds() ;
+
+R2_city4_Citizen = West_City_4.getDeadCitizen();
+R2_city4_DeadCitizen = West_City_4.getDeadCitizen();
+R2_city4_PosA = GovR3_C4.getPostiveA() ;
+R2_city4_PosB = GovR3_C4.getPostiveB() ;
+R2_city4_ICU = icuR3_C4.getBeds() ;
+
+///////////////// clone
+
+P2_R1_city1_Citizen = P2_East_City_1.getDeadCitizen();
+P2_R1_city1_DeadCitizen = P2_East_City_1.getDeadCitizen();
+P2_R1_city1_PosA = P2_GovR2_C1.getPostiveA() ;
+P2_R1_city1_PosB = P2_GovR2_C1.getPostiveB() ;
+P2_R1_city1_ICU = P2_icuR2_C1.getBeds() ;
+
+P2_R1_city2_Citizen = P2_East_City_2.getDeadCitizen();
+P2_R1_city2_DeadCitizen = P2_East_City_2.getDeadCitizen();
+P2_R1_city2_PosA = P2_GovR2_C2.getPostiveA() ;
+P2_R1_city2_PosB = P2_GovR2_C2.getPostiveB() ;
+P2_R1_city2_ICU = P2_icuR2_C2.getBeds() ;
+
+P2_R1_city3_Citizen = P2_East_City_3.getDeadCitizen();
+P2_R1_city3_DeadCitizen = P2_East_City_3.getDeadCitizen();
+P2_R1_city3_PosA = P2_GovR2_C3.getPostiveA() ;
+P2_R1_city3_PosB = P2_GovR2_C3.getPostiveB() ;
+P2_R1_city3_ICU = P2_icuR2_C3.getBeds() ;
+
+P2_R1_city4_Citizen = P2_East_City_4.getDeadCitizen();
+P2_R1_city4_DeadCitizen = P2_East_City_4.getDeadCitizen();
+P2_R1_city4_PosA = P2_GovR2_C4.getPostiveA() ;
+P2_R1_city4_PosB = P2_GovR2_C4.getPostiveB() ;
+P2_R1_city4_ICU = P2_icuR2_C4.getBeds() ;
+
+////////////////////////// Regoin2
+
+P2_R2_city1_Citizen = P2_West_City_1.getDeadCitizen();
+P2_R2_city1_DeadCitizen = P2_West_City_1.getDeadCitizen();
+P2_R2_city1_PosA = P2_GovR3_C1.getPostiveA() ;
+P2_R2_city1_PosB = P2_GovR3_C1.getPostiveB() ;
+P2_R2_city1_ICU = P2_icuR3_C1.getBeds() ;
+
+P2_R2_city2_Citizen = P2_West_City_2.getDeadCitizen();
+P2_R2_city2_DeadCitizen = P2_West_City_2.getDeadCitizen();
+P2_R2_city2_PosA = P2_GovR3_C2.getPostiveA() ;
+P2_R2_city2_PosB = P2_GovR3_C2.getPostiveB() ;
+P2_R2_city2_ICU = P2_icuR3_C2.getBeds() ;
+
+P2_R2_city3_Citizen = P2_West_City_3.getDeadCitizen();
+P2_R2_city3_DeadCitizen = P2_West_City_3.getDeadCitizen();
+P2_R2_city3_PosA = P2_GovR3_C3.getPostiveA() ;
+P2_R2_city3_PosB = P2_GovR3_C3.getPostiveB() ;
+P2_R2_city3_ICU = P2_icuR3_C3.getBeds() ;
+
+P2_R2_city4_Citizen = P2_West_City_4.getDeadCitizen();
+P2_R2_city4_DeadCitizen = P2_West_City_4.getDeadCitizen();
+P2_R2_city4_PosA = P2_GovR3_C4.getPostiveA() ;
+P2_R2_city4_PosB = P2_GovR3_C4.getPostiveB() ;
+P2_R2_city4_ICU = P2_icuR3_C4.getBeds() ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Start of main loop for phase one and phase two          
