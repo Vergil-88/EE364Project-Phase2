@@ -332,7 +332,7 @@ public class City implements Places, Cloneable {
 
     public Object clone() {
 
-        return new City(Name, Population, Area, Overpopulation, Citizen, Quarantine_Citizen, DeadCitizen, Travelers)
+        return new City(Name, Population, Area, Overpopulation, Citizen, Quarantine_Citizen, DeadCitizen, Travelers);
     }
 
 }
