@@ -10,6 +10,7 @@ public class Human {
     private String Status="";
     private String History="";
     private String TravelHistory="";
+    private Boolean Vaccine;
     /*how many critical dieases do you guys want? three? or four?
     /* and what about we make "String cD" boolean instead of a string of dieases which will make it easier for us because if it was true we can apply a percantage where the person can get covid faster or not
     */
@@ -24,6 +25,9 @@ public class Human {
     public Human()
     {
        
+        Vaccine=false;
+
+
         Status= "Normal \n";
         id=super.toString() ; 
         id = id.substring(id.indexOf("@")+1,id.length()-1);
@@ -228,6 +232,12 @@ public void updatehuman(int day) {
 
 }
 
+public void setVaccine(Boolean vaccine) {
+    Vaccine = vaccine;
+}
+public Boolean getVaccine() {
+    return Vaccine;
+}
 
 
 

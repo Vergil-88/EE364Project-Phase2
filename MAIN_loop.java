@@ -3,6 +3,24 @@ import java.util.Scanner;
 
 public class MAIN_loop {
     static Scanner input = new Scanner(System.in);
+    ////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////////////////////////////////////
     public static void main(String[] args) {
         int PickedDay=1;
         boolean ON_OFF=true;   
@@ -36,7 +54,8 @@ public class MAIN_loop {
         City West_City_3=West.Cities.get(2);
         City West_City_4=West.Cities.get(3);
 
-        //////////////////////////////////////////////// Region 4 and its Cities 
+//////////////////////////////////////////////// Region 4 and its Cities 
+
 
         ////////////////////////////////////////////////////////////// Start Covid just Happens for 1 time for all the Cities
         CovidSpread covid = new CovidSpread();
@@ -77,7 +96,7 @@ public class MAIN_loop {
         ICU icuR3_C4 = new ICU();
 
 
-        /////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////
 
         Main_Method R2_C1 = new Main_Method();
         Main_Method R2_C2 = new Main_Method();
@@ -94,6 +113,78 @@ public class MAIN_loop {
         Cities.addAll(West.getCities());
         Cities.addAll(East.getCities());
 
+
+        
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Clone for Phase 2 and its Requrments          
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    City P2_East_City_1      =   (City) East_City_1.clone();
+    City P2_East_City_2      =   (City) East_City_2.clone();
+    City P2_East_City_3      =   (City) East_City_3.clone();
+    City P2_East_City_4      =   (City) East_City_4.clone();
+
+    City P2_West_City_1      =   (City) West_City_1.clone();
+    City P2_West_City_2      =   (City) West_City_2.clone();
+    City P2_West_City_3      =   (City) West_City_3.clone();
+    City P2_West_City_4      =   (City) West_City_4.clone();
+
+    Region P2_East = new Region("East");
+    Region P2_West = new Region("West"); 
+
+
+    ministryofHealth P2_GovR2_C1 = new ministryofHealth();
+    ministryofHealth P2_GovR2_C2 = new ministryofHealth();
+    ministryofHealth P2_GovR2_C3 = new ministryofHealth();
+    ministryofHealth P2_GovR2_C4 = new ministryofHealth();
+
+    ministryofHealth P2_GovR3_C1 = new ministryofHealth();
+    ministryofHealth P2_GovR3_C2 = new ministryofHealth();
+    ministryofHealth P2_GovR3_C3 = new ministryofHealth();
+    ministryofHealth P2_GovR3_C4 = new ministryofHealth();
+
+    ICU P2_icuR2_C1 = new ICU();
+    ICU P2_icuR2_C2 = new ICU();
+    ICU P2_icuR2_C3 = new ICU();
+    ICU P2_icuR2_C4 = new ICU();
+
+    ICU P2_icuR3_C1 = new ICU();
+    ICU P2_icuR3_C2 = new ICU();
+    ICU P2_icuR3_C3 = new ICU();
+    ICU P2_icuR3_C4 = new ICU();
+
+
+    covid.StartCovid(P2_East_City_1);
+    covid.StartCovid(P2_East_City_2);
+    covid.StartCovid(P2_East_City_3);
+    covid.StartCovid(P2_East_City_4);
+
+    covid.StartCovid(P2_West_City_1);
+    covid.StartCovid(P2_West_City_2);
+    covid.StartCovid(P2_West_City_3);
+    covid.StartCovid(P2_West_City_4);
+
+    Main_Method P2_R2_C1 = new Main_Method();
+    Main_Method P2_R2_C2 = new Main_Method();
+    Main_Method P2_R2_C3 = new Main_Method();
+    Main_Method P2_R2_C4 = new Main_Method();
+
+    Main_Method P2_R3_C1 = new Main_Method();
+    Main_Method P2_R3_C2 = new Main_Method();
+    Main_Method P2_R3_C3 = new Main_Method();
+    Main_Method P2_R3_C4 = new Main_Method();
+
+    ArrayList<City> P2_Cities = new ArrayList<>();
+
+    P2_Cities.addAll(P2_West.getCities());
+    P2_Cities.addAll(P2_East.getCities());
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Start of main loop for phase one and phase two          
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         int Porgress=0;
         int days=365;// a year
         int numOfTravle;
@@ -102,15 +193,45 @@ public class MAIN_loop {
 
         
 
-            R2_C1.City_Activite(day, East_City_1, GovR2_C1, icuR2_C1, covid);
-            R2_C2.City_Activite(day, East_City_2, GovR2_C2, icuR2_C2, covid);
-            R2_C3.City_Activite(day, East_City_3, GovR2_C3, icuR2_C3, covid);
-            R2_C4.City_Activite(day, East_City_4, GovR2_C4, icuR2_C4, covid);
+            R2_C1.City_Activite(day, East_City_1, GovR2_C1, icuR2_C1, covid,false);
+            R2_C2.City_Activite(day, East_City_2, GovR2_C2, icuR2_C2, covid,false);
+            R2_C3.City_Activite(day, East_City_3, GovR2_C3, icuR2_C3, covid,false);
+            R2_C4.City_Activite(day, East_City_4, GovR2_C4, icuR2_C4, covid,false);
 
-            R3_C1.City_Activite(day, West_City_1, GovR3_C1, icuR3_C1, covid);
-            R3_C2.City_Activite(day, West_City_2, GovR3_C2, icuR3_C2, covid);
-            R3_C3.City_Activite(day, West_City_3, GovR3_C3, icuR3_C3, covid);
-            R3_C4.City_Activite(day, West_City_4, GovR3_C4, icuR3_C4, covid);
+            R3_C1.City_Activite(day, West_City_1, GovR3_C1, icuR3_C1, covid,false);
+            R3_C2.City_Activite(day, West_City_2, GovR3_C2, icuR3_C2, covid,false);
+            R3_C3.City_Activite(day, West_City_3, GovR3_C3, icuR3_C3, covid,false);
+            R3_C4.City_Activite(day, West_City_4, GovR3_C4, icuR3_C4, covid,false);
+
+
+
+
+
+            P2_R2_C1.City_Activite(day, P2_East_City_1, P2_GovR2_C1, P2_icuR2_C1, covid,true);
+            P2_R2_C2.City_Activite(day, P2_East_City_2, P2_GovR2_C2, P2_icuR2_C2, covid,true);
+            P2_R2_C3.City_Activite(day, P2_East_City_3, P2_GovR2_C3, P2_icuR2_C3, covid,true);
+            P2_R2_C4.City_Activite(day, P2_East_City_4, P2_GovR2_C4, P2_icuR2_C4, covid,true);
+
+            P2_R3_C1.City_Activite(day, P2_West_City_1, P2_GovR3_C1, P2_icuR3_C1, covid,true);
+            P2_R3_C2.City_Activite(day, P2_West_City_2, P2_GovR3_C2, P2_icuR3_C2, covid,true);
+            P2_R3_C3.City_Activite(day, P2_West_City_3, P2_GovR3_C3, P2_icuR3_C3, covid,true);
+            P2_R3_C4.City_Activite(day, P2_West_City_4, P2_GovR3_C4, P2_icuR3_C4, covid,true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             
             Porgress++;

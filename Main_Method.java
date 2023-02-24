@@ -35,7 +35,60 @@ public class Main_Method {
     int numOfinWiting=0;
     int total_Beds;
 
-    public void City_Activite(int day,City city,ministryofHealth MinistryofHealth,ICU icu,CovidSpread covid){
+    public void City_Activite(int day,City city,ministryofHealth MinistryofHealth,ICU icu,CovidSpread covid,Boolean Phase2ENABLE){
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // adding ppl to quarantine  at day 1 if      Phase2ENABLE is 1    0.90 of ppl           
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        int NumofCitz =city.get_Citizen().size();
+        int NumOFPlltoquarantine = (int) 0.90 * NumofCitz;
+        if(Phase2ENABLE == true && day ==1 ){
+        ArrayList <Human>  pll     = city.get_Citizen();
+
+        
+        
+
+        for (Human C : pll) {
+            
+
+            city.AddQuarantine_Citizen(C);
+            C.SetStatus("Quarantined  \n");
+            NumOFPlltoquarantine--;
+
+            if(NumOFPlltoquarantine==0)
+            break;
+            
+        }
+    }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Vaccinating ppl every day 0.03 of ppl every day          
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        int NumOFPlltoVaccinating = (int) 0.03 * NumofCitz;
+        
+        if(Phase2ENABLE == true && day ==1 ){
+            ArrayList <Human>  pll     =   city.get_Citizen();
+            
+        
+    
+            for (Human C : pll) {
+                
+                if((C.getVaccine())==false){
+
+                C.setVaccine(true);
+                C.SetStatus("Vaccenatied  \n");
+                NumOFPlltoVaccinating--;
+    
+                if(NumOFPlltoVaccinating == 0)
+                break;
+            }
+
+            }
+        }
+
+
+
+
+
 
 
 
@@ -48,7 +101,7 @@ public class Main_Method {
             
             for (Human B: city.get_Citizen() ) {
                 if(B.getCovidInfection_TypeType().equals("B"))
-                    covid.B_Becomes_A(B,MinistryofHealth.getPostiveB(),day);  
+                    covid.B_Becomes_A(B,MinistryofHealth.getPostiveB(),day,city);  
             }
 
 
@@ -56,7 +109,7 @@ public class Main_Method {
 
             for (Human C: city.get_Citizen() ) {
                 if(C.getCovidInfection_TypeType().equals("C"))
-                    covid.C_Becomes_A(C,MinistryofHealth.getPostiveC(),day);  
+                    covid.C_Becomes_A(C,MinistryofHealth.getPostiveC(),day,city);  
             }
         } 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,7 +159,7 @@ public class Main_Method {
 
 
             icu.removeType_Normal_From_ICU();
-
+            
 
             ArrayList<Human> Witing = icu.getWaitingList();
             if(Witing.size()!=0)
@@ -235,7 +288,21 @@ public class Main_Method {
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // 7th Clearing the Calls form the day and moveing the Dead Citizins to A diffrant Array and Removing them fomr the Orignal 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            
+        ArrayList <Human> R = new ArrayList <Human>();
+        for (Human H : icu.getWaitingList()) {
+            if((MinistryofHealth.getPostiveA().contains(H))){
+                
+            }
+            else{
+                
+                R.add(H);
+            }
+
+        }
+
+        icu.getWaitingList().removeAll(R);
+
+
         ArrayList<Human> Dead = MinistryofHealth.getDead();
 
         for (Human  h :  city.get_Citizen()) {
@@ -244,6 +311,7 @@ public class Main_Method {
 
             city.setDeadCitizen(Dead);
             city.get_Citizen().removeAll(Dead);
+            city.getQuarantine_Citizen().removeAll(Dead);
      
     }
 

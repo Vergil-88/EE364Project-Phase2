@@ -247,14 +247,35 @@ public class CovidSpread {
     }
 
     //// Chaing B to A by  
-    public void B_Becomes_A(Human B,ArrayList <Human> PosB,int day){
+    public void B_Becomes_A(Human B,ArrayList <Human> PosB,int day,City city){
+        ArrayList <Human> Quarantine = city.getQuarantine_Citizen(); 
+       
         if(B.getCovidInfection_TypeType().equals("B")){
             double percentge=Math.random();
-            if(percentge>0.90){   //10%
+            if(percentge>0.80 && !(Quarantine.contains(B)) ){   //20%
+           
+                
+
+                B.setCovidInfection_Type(new A());
+                B.SetStatus("At Day:"+day+" A\n");
+               
+
+                
+            }
+            else if(percentge>0.99 && Quarantine.contains(B)) {//10%
+
+
+
                 B.setCovidInfection_Type(new A());
                 B.SetStatus("At Day:"+day+" A\n");
 
-            }else{
+
+
+            } 
+            
+            
+            else{
+
                 B.setCovidInfection_Type(new Normal());
                 B.SetStatus("At Day:"+day+" Normal\n");
 
@@ -264,13 +285,26 @@ public class CovidSpread {
     }
 
     //// Chaing C to A 
-    public void C_Becomes_A(Human C,ArrayList <Human> PosC ,int day){
+    public void C_Becomes_A(Human C,ArrayList <Human> PosC ,int day,City city){
+        ArrayList <Human> Quarantine = city.getQuarantine_Citizen(); 
+
         if(C.getCovidInfection_TypeType().equals("C")){
             double percentge=Math.random();
-            if(percentge>0.98){  //%2
+            if(percentge>0.95   ){  //%5
                 C.setCovidInfection_Type(new A());
                 C.SetStatus("At Day:"+day+" A\n");
-            }else{
+            }
+            else if(percentge>0.99 && Quarantine.contains(C)) {//3%
+
+
+
+                C.setCovidInfection_Type(new A());
+                C.SetStatus("At Day:"+day+" A\n");
+
+
+
+            } 
+            else{
                 C.setCovidInfection_Type(new Normal());
                 C.SetStatus("At Day:"+day+" Normal\n");
             }

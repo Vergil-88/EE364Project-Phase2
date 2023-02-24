@@ -1,17 +1,35 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class City implements Places {
+public class City implements Places, Cloneable {
     
     private String Name;
     private int Population;
     private double Area;
     private double Overpopulation;
-    private ArrayList <Human> Citizen   =   new ArrayList<Human>();
-    private ArrayList <Human> DeadCitizen = new ArrayList<Human>();
-    private ArrayList <Human> Travelers = new ArrayList<Human>();
+    private ArrayList <Human> Citizen              =   new ArrayList<Human>();
+    private ArrayList <Human> Quarantine_Citizen   =   new ArrayList<Human>();
+    private ArrayList <Human> DeadCitizen          =   new ArrayList<Human>();
+    private ArrayList <Human> Travelers            =   new ArrayList<Human>();
     
-    
+    public City(String name, int Population , double Area,double Overpopulation,ArrayList <Human> Citizen,ArrayList <Human> Quarantine_Citizen,ArrayList <Human> DeadCitizen,ArrayList <Human> Travelers  ){
+
+
+            name=this.Name;
+            Population=this.Population;
+            Area=this.Area;
+            Overpopulation=this.Overpopulation;
+            Citizen=this.Citizen;
+            Quarantine_Citizen=this.Quarantine_Citizen;
+            DeadCitizen=this.DeadCitizen;
+            Travelers=this.Travelers;
+
+
+
+
+
+
+    }
 
     public City(String Name, int Population, double Area){
         this.Name = Name;
@@ -302,6 +320,19 @@ public class City implements Places {
 
     }
 
+    public ArrayList<Human> getQuarantine_Citizen() {
+        return Quarantine_Citizen;
+    }
+    public void setQuarantine_Citizen(ArrayList<Human> quarantine_Citizen) {
+        Quarantine_Citizen = quarantine_Citizen;
+    }
+    public void AddQuarantine_Citizen(Human human) {
+        Quarantine_Citizen.add(human);
+    }
 
+    public Object clone() {
+
+        return new City(Name, Population, Area, Overpopulation, Citizen, Quarantine_Citizen, DeadCitizen, Travelers)
+    }
 
 }
